@@ -22,7 +22,7 @@ def command():
         task = r.recognize_google(audio, language='ru-RU').lower()  
         print('Из вашей дырки донеслось: {}'.format(task)) 
     except sr.UnknownValueError: 
-        talk('Глупый организм, скажи внятно') 
+        #talk('Глупый организм, скажи внятно') 
         task = command()
 
     return task

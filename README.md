@@ -20,5 +20,12 @@ then install
 
 then install
 ```bash 
-    pip3 install -r requirements.txt
+    sudo pip3 install -r requirements.txt
 ```
+
+if you have libs but code didn't work, run:
+```bush
+    sudo pip3 install --upgrade speechrecognition
+    sudo pip3 install --upgrade pyaudio 
+```
+it's have to work now. 
