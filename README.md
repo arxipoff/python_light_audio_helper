@@ -1,4 +1,4 @@
-## python_light_audio_helper
+## python_light_audio_helper (tested only on macOS)
 
 install env and activate
 ```bash

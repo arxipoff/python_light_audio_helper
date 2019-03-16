@@ -4,7 +4,9 @@ import sys
 import webbrowser
 
 
-def talk (words):
+
+
+def talk(words):
     print(words)
     os.system('say ' + words)
 
@@ -14,24 +16,23 @@ def command():
 
     with sr.Microphone() as source:
         print('Жги уродец')
-        r.pause_threshold = 1
+        r.pause_threshold = 2
         r.adjust_for_ambient_noise(source, duration=1)
         audio = r.listen(source)
 
-    try: 
+    try:
         task = r.recognize_google(audio, language='ru-RU').lower()  
         print('Из вашей дырки донеслось: {}'.format(task)) 
     except sr.UnknownValueError: 
-        #talk('Глупый организм, скажи внятно') 
+        # talk('Глупый организм, скажи внятно')
         task = command()
 
     return task
 
 
-def makeSome(task):
+def make_some(task):
     if 'проснись и пой' in task:
         talk('Привет кожанный ублюдок, чё тебе надо')
-
 
     elif 'открой google' in task:
         talk('Откываю жди какашка')
@@ -40,8 +41,12 @@ def makeSome(task):
     elif 'открой яндекс' in task:
         talk('Откываю жди какашка')
         url = 'https://yandex.ru'
-        webbrowser.open(url)    
+        webbrowser.open(url)
 
+    elif 'включи музыку' in task:
+        talk('понеслась жара, танцуйте организмы')
+        url = 'https://www.youtube.com/watch?v=zzHouyi6t4g&list=RDJn8GQ-dLrWg&index=8'
+        webbrowser.open(url)
 
     elif 'кто такая ира' in task:
         talk('Ты что дурак? это ваш главный женский человек')
@@ -53,10 +58,14 @@ def makeSome(task):
         talk('Это наш бро. За бротана и двор стреляю в упор')
     elif 'кто такой ваня' in task:
         talk('Ваня монстр, он и ios и android')
+    elif 'майкл тут' in task:
+        talk('да знаю я! не пались делай вид что работаешь глупый организм')
+    elif 'запускаю' in task:
+        talk('кого ты там запускаешь какашка! успакойся')        
     elif 'убейся' in task:
         talk('Удаляюсь, кричи если что глупый организм')
         sys.exit()
 
 
 while True:
-    makeSome(command())   
+    make_some(command())
