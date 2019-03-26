@@ -2,8 +2,8 @@
 
 install env and activate
 ```bash
-    sudo pip3 install virtualenv
-    python3 -m venv env
+    sudo pip install virtualenv
+    python -m venv env
     source env/bin/activate
 ```
 
@@ -20,12 +20,12 @@ then install
 
 then install
 ```bash 
-    sudo pip3 install -r requirements.txt
+    sudo pip install -r requirements.txt
 ```
 
 if you have libs but code didn't work, run:
 ```bush
-    sudo pip3 install --upgrade speechrecognition
-    sudo pip3 install --upgrade pyaudio 
+    sudo pip install --upgrade speechrecognition
+    sudo pip install --upgrade pyaudio 
 ```
 it's have to work now. 
